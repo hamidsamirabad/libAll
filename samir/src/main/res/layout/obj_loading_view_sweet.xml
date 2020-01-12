@@ -78,7 +78,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/success_circle" />
 
-            <artmis.org.template.Utils.SweetAlert.SuccessTickView
+            <ir.git.samir.Utils.SweetAlert.SuccessTickView
                 android:id="@+id/success_tick"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -122,7 +122,7 @@
                 android:layout_gravity="center" />
         </FrameLayout>
 
-        <artmis.org.template.Utils.Objects.CTextview
+        <ir.git.samir.Utils.Views.CTextview
             android:id="@+id/title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -130,9 +130,9 @@
             android:textColor="#575757"
             android:layout_marginTop="10dp"
             android:singleLine="true"
-            android:text="@string/dialog_default_title" />
+            android:text="your text is here" />
 
-        <artmis.org.template.Utils.Objects.CTextview
+        <ir.git.samir.Utils.Views.CTextview
             android:id="@+id/content_text"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
@@ -149,7 +149,7 @@
             android:layout_height="wrap_content"
             android:gravity="center">
 
-            <artmis.org.template.Utils.Objects.Cbutton
+           <ir.git.samir.Utils.Views.Cbutton
                 android:id="@+id/cancel_button"
                 style="@style/dialog_blue_button"
                 android:background="@drawable/gray_button_background"
@@ -157,7 +157,7 @@
                 android:visibility="gone"
                 android:text="@string/cancel" />
 
-            <artmis.org.template.Utils.Objects.Cbutton
+            <ir.git.samir.Utils.Views.Cbutton
                 android:id="@+id/confirm_button"
                 style="@style/dialog_blue_button"
                 android:text="@string/ok" />
