@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:fitsSystemWindows="true"
+    android:theme="@style/MyMaterialTheme.AppBarOverlay">
+
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/toolbar_background"
+        android:gravity="left|center"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:layout_height="match_parent">
+
+
+
+
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+
+            android:id="@+id/iconAlone"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/click_circle"
+            android:clickable="true"
+            android:padding="8dp"
+
+            android:scaleType="center"
+            app:materialIcon="arrow_left"
+            app:materialIconColor="@color/toolbar_icon"
+            app:materialIconSize="@dimen/size_icon_options" />
+
+        <ir.git.samir.Utils.Views.CTextview
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/back"
+            android:singleLine="true"
+            android:layout_marginLeft="8dp"
+            android:id="@+id/textTitle"
+            android:textColor="@color/toolbar_text"  />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/LogoImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:gravity="left|center"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right|center"
+            android:layout_height="match_parent">
+
+
+
+            <ir.git.samir.Utils.Views.CTextview
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Next"
+            android:id="@+id/textBtn"
+            android:singleLine="true"
+            android:visibility="gone"
+            android:textColor="@color/toolbar_text" />
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/viewC"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/iconC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/click_circle"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    app:materialIcon="plus"
+                    app:materialIconColor="@color/toolbar_icon"
+                    app:materialIconSize="@dimen/size_icon_options" />
+
+
+            </FrameLayout>
+
+
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/viewB"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/iconB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/click_circle"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    app:materialIcon="plus"
+                    app:materialIconColor="@color/toolbar_icon"
+                    app:materialIconSize="@dimen/size_icon_options" />
+
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/viewA"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/iconA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/click_circle"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    app:materialIcon="menu_down"
+                    app:materialIconColor="@color/toolbar_icon"
+                    app:materialIconSize="@dimen/size_icon_options" />
+
+
+            </FrameLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</com.google.android.material.appbar.AppBarLayout>

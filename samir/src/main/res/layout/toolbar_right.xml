@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:fitsSystemWindows="true"
+    android:theme="@style/MyMaterialTheme.AppBarOverlay">
+
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="left|center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_marginLeft="4dp"
+            android:gravity="left|center"
+            android:layout_height="match_parent">
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/viewA"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/iconA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/click_circle"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    app:materialIcon="menu_down"
+                    app:materialIconColor="@color/toolbar_icon"
+                    app:materialIconSize="@dimen/size_icon_options" />
+
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/viewB"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/iconB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/click_circle"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    app:materialIcon="plus"
+                    app:materialIconColor="@color/toolbar_icon"
+                    app:materialIconSize="@dimen/size_icon_options" />
+
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/viewC"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/iconC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/click_circle"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    app:materialIcon="plus"
+                    app:materialIconColor="@color/toolbar_icon"
+                    app:materialIconSize="@dimen/size_icon_options" />
+
+
+            </FrameLayout>
+
+
+            <artmis.org.template.Utils.Objects.CTextview
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Next"
+            android:id="@+id/textBtn"
+            android:visibility="gone"
+            android:textColor="@color/toolbar_text" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="right|center"
+            android:layout_height="match_parent">
+
+
+        <ir.git.samir.Utils.Views.CTextviewBold
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/back"
+            android:layout_marginRight="8dp"
+            android:id="@+id/textTitle"
+            android:textColor="@color/toolbar_text" />
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+
+            android:id="@+id/iconAlone"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/click_circle"
+            android:clickable="true"
+            android:padding="8dp"
+            android:scaleType="center"
+            app:materialIcon="arrow_right"
+            app:materialIconColor="@color/toolbar_icon"
+            app:materialIconSize="@dimen/size_icon_options" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/LogoImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:gravity="left|center"
+            android:tint="#555"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+</com.google.android.material.appbar.AppBarLayout>
