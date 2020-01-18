@@ -1,10 +1,13 @@
 package ir.git.samir.Parents;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +18,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.snackbar.Snackbar;
 import ir.git.samir.Lib;
 import ir.git.samir.R;
-import ir.git.samir.Utils.FullScreenActivity;
 
 
 /**
@@ -36,8 +38,24 @@ public class ParentBase extends AppCompatActivity {
 
     public void fullScreen(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-           new FullScreenActivity().setWindowFlag(this);
+            setWindowFlag(this);
         }
+    }
+
+    public final void setWindowFlag( Activity act) {
+        if (Build.VERSION.SDK_INT >= 19) {
+            int bits = 201326592;
+            Window win = act.getWindow();
+
+            WindowManager.LayoutParams winParams = win.getAttributes();
+            winParams.flags &= ~bits;
+            win.setAttributes(winParams);
+            if (Build.VERSION.SDK_INT >= 21) {
+                Window var10000 = act.getWindow();
+                var10000.setStatusBarColor(0);
+            }
+        }
+
     }
 
     @Override

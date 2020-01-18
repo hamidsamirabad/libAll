@@ -1,14 +1,12 @@
-package ir.git.samir.Utils
+package ir.git.samir.Parents
 
 import android.app.Activity
 import android.graphics.Color
 import android.os.Build
 import android.view.WindowManager
-import androidx.annotation.RequiresApi
 
 class FullScreenActivity{
 
-      @RequiresApi(Build.VERSION_CODES.KITKAT)
       fun  setWindowFlag(act:Activity) {
 
           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
