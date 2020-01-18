@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">samir</string>
+    <string name="back">برگشت</string>
+    <string name="loading">کمی صبر کنید</string>
+    <string name="error_message">خطا در اتصال</string>
+    <string name="error_message_content">لطفا دوباره تلاش کنید</string>
+    <string name="tryagin">تلاش مجدد</string>
+    <string name="ok">باشه</string>
+    <string name="cancel">بی خیال</string>
+</resources>

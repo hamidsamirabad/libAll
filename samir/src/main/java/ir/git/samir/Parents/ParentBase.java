@@ -15,6 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.snackbar.Snackbar;
 import ir.git.samir.Lib;
 import ir.git.samir.R;
+import ir.git.samir.Utils.FullScreenActivity;
 
 
 /**
@@ -33,11 +34,11 @@ public class ParentBase extends AppCompatActivity {
         Lib.view=this.getWindow().getDecorView().findViewById(android.R.id.content);
     }
 
-//    public void fullScreen(){
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//           new FullScreenActivity().setWindowFlag(this);
-//        }
-//    }
+    public void fullScreen(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+           new FullScreenActivity().setWindowFlag(this);
+        }
+    }
 
     @Override
     public void setContentView(int layoutResID) {
