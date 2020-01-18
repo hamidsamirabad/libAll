@@ -16,14 +16,14 @@ public class Lib {
 
 
 
-    public void init(){
+    public static void init(){
         ClassPreferences pref= new ClassPreferences(context);
         isNightMode = pref.getBoolean("nightMode");
 
     }
 
 
-    public void setIsNightMode(boolean isNightMode){
+    public static void setIsNightMode(boolean isNightMode){
         ClassPreferences pref= new ClassPreferences(context);
         pref.set("nightMode",isNightMode);
     }
