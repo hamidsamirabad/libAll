@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -26,6 +27,7 @@ import ir.git.samir.R;
 public class ParentBase extends AppCompatActivity {
 
     public Context context;
+    public static RequestPermissionHandler requestPermission;
 
     @Override
     protected void onResume() {
@@ -100,8 +102,63 @@ public class ParentBase extends AppCompatActivity {
     }
 
 
+    public void askPermissonFor(String permissionId,boolean isAskAgain, RequestPermissionListener listener) {
+        askPermissonFor(new String[]{permissionId},isAskAgain,listener);
+    }
+
+    public void askPermissonFor(String permissionId, RequestPermissionListener listener) {
+        askPermissonFor(new String[]{permissionId},false,listener);
+    }
+
+    public void askPermissonFor(String[] permissionIds, RequestPermissionListener listener) {
+        askPermissonFor(permissionIds,false,listener);
+    }
+
+    public void askPermissonFor(final String[] permissionIds, final boolean isAskAgain, final RequestPermissionListener listener) {
+
+        requestPermission = new RequestPermissionHandler();
+
+        requestPermission.requestPermission(this, permissionIds, 10007, new RequestPermissionHandler.RequestPermissionListener() {
+            @Override
+            public void onSuccess() {
+
+                if(listener!=null){
+                    listener.onSuccess();
+                }
+
+            }
+
+            @Override
+            public void onFailed() {
+                if(isAskAgain)
+                {
+                    askPermissonFor(permissionIds,isAskAgain,listener);
+                }
+
+                showToast("کاربر گرامی، برای دسترسی به این قسمت باید اجازه دسترسی به نرم افزار بدهید");
+
+            }
+        });
+
+
+    }
+
+
+
     public void print(String text){
         Log.i("Info",text);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        requestPermission.onRequestPermissionsResult(requestCode, permissions,
+                grantResults);
+    }
+
+    public interface RequestPermissionListener {
+        void onSuccess();
     }
 
 }

@@ -49,6 +49,9 @@
 
         <attr name="src" format="integer" />
 
+        <attr name="nightColor" format="color" />
+
+
     </declare-styleable>
 
     <declare-styleable name="MaterialTabHost">

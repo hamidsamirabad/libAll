@@ -1,9 +1,15 @@
 package ir.git.liball;
 
+import android.Manifest;
 import android.os.Bundle;
+import android.view.View;
+import android.webkit.PermissionRequest;
 import ir.git.samir.Enums.FontType;
 import ir.git.samir.Parents.ParentBase;
 import ir.git.samir.Utils.loading.LoadingSweet;
+
+import java.security.Permission;
+import java.security.Permissions;
 
 public class MainActivity extends ParentBase {
 
@@ -15,15 +21,23 @@ public class MainActivity extends ParentBase {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        loading = new LoadingSweet(this);
+
 
         showToast(FontType.IRANSANS_Bold);
 
-        loading.waiting(new LoadingSweet.OnCancelClick() {
+        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void cancel() {
-                loading.cancel();
+            public void onClick(View view) {
+                askPermissonFor(Manifest.permission.CAMERA, new RequestPermissionListener() {
+                    @Override
+                    public void onSuccess() {
+
+                    }
+                });
             }
         });
+
+
+
     }
 }
